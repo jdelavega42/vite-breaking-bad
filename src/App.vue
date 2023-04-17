@@ -1,6 +1,8 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
+import axios from "axios";
+import { store } from "./store";
 
 export default {
   components: {
@@ -10,8 +12,18 @@ export default {
   data() {
 
   },
-  methods: {
-
+  data() {
+    return{
+      store
+    }
+  },
+  mounted() {
+    store.loading = true;
+    axios.get(store.apiURL).then((resp) => {
+      console.log(resp.data.data);
+      this.store.cards = resp.data.data
+    });
+    store.loading = false;
   }
 }
 </script>

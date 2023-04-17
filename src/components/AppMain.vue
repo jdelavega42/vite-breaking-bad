@@ -1,9 +1,12 @@
 <script>
 import MainContent from './MainContent.vue';
+import MainInput from './Maininput.vue';
+
  export default {
     name: "AppMain",
     components: {
-        MainContent
+        MainContent,
+        MainInput
     },
     data() {
 
@@ -13,13 +16,18 @@ import MainContent from './MainContent.vue';
 </script>
 
 <template>
-<div class="content">
-    My Content
+<main class="container">
+    <MainInput />
     <MainContent />
-</div>
+</main>
   
 </template>
 
 <style lang="scss" scoped>
+@use "../styles/generals.scss";
+@use "../styles/partials/variables.scss" as *;
+    main {
+        background-color: $primary-bg;
+    }
 
 </style>
