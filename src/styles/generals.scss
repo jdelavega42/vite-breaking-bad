@@ -1,0 +1,17 @@
+@import "bootstrap/scss/bootstrap";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+img {
+    max-width: 100%;
+}
+ul {
+    list-style: none;
+}

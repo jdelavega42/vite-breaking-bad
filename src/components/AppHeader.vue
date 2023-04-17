@@ -8,9 +8,14 @@ export default {
 </script>
 
 <template>
-    <h1>Title</h1>
+    <header class="row">
+        <img src="../assets/Yugioh_Logo.webp" alt=""  class="col-1">
+        <h1 class="col-11">{{ title }}</h1>
+    </header>
 </template>
 
 <style lang="scss" scoped>
-
+    img {
+        object-fit: contain;
+    }
 </style>

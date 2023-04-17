@@ -17,10 +17,16 @@ export default {
 </script>
 
 <template>
-  <AppHeader />
-  <AppMain />
+  <div class="container">
+    <AppHeader title="Yu-Gi-Oh! Api"/>
+    <AppMain />
+  </div>
 </template>
 
 <style lang="scss">
+@use "./styles/generals.scss";
 
+.container {
+  padding: 1rem;
+}
 </style>
