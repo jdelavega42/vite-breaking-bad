@@ -17,7 +17,7 @@
 
 <template>
     <main class="container p-5 bg-light">
-        <div class="heading">Found N cards </div>
+        <div class="heading">Found {{ store.cards.length }} cards </div>
         <div class="row row-cols-5 g-2">
             <div v-for="card in store.cards" :key="card.id" class="col">
                     <ContentCard :card="card" />

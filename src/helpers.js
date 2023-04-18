@@ -2,7 +2,7 @@ import { store } from "./store";
 import axios from "axios";
 
 function getCards() {
-    const params = {num: 20, offset:0};
+    const params = {num: 50, offset:0};
     if(store.selectedArchetype) {
         params.archetype = store.selectedArchetype;
     };
