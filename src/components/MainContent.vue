@@ -1,6 +1,7 @@
 <script>
     import ContentCard from './ContentCard.vue';
-    import { store } from '../store'
+    import { store } from '../store';
+    
     export default {
         name: "MainContent",
         components: {
@@ -10,17 +11,12 @@
             return {
                 store
             }
-        }
+        },
     }
 </script>
 
 <template>
-    <main v-if="store.loading">
-        <div class="heading">
-            <font-awesome-icon :icon="['fas', 'spinner']" spin />
-        </div>
-    </main>
-    <main v-else class="container p-5 bg-light">
+    <main class="container p-5 bg-light">
         <div class="heading">Found N cards </div>
         <div class="row row-cols-5 g-2">
             <div v-for="card in store.cards" :key="card.id" class="col">

@@ -1,8 +1,8 @@
 <script>
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
-import axios from "axios";
 import { store } from "./store";
+import { getCards } from "./helpers";
 
 export default {
   components: {
@@ -10,28 +10,23 @@ export default {
     AppMain
   },
   data() {
-
-  },
-  data() {
     return{
       store
     }
   },
   mounted() {
-    store.loading = true;
-    axios.get(store.apiURL).then((resp) => {
-      console.log(resp.data.data);
-      this.store.cards = resp.data.data
-    });
-    store.loading = false;
-  }
+    getCards()
+  },
 }
 </script>
 
 <template>
   <div class="container">
     <AppHeader title="Yu-Gi-Oh! Api"/>
-    <AppMain />
+    <div v-if="store.loading" class="container">
+      LOADING...
+    </div>
+    <AppMain v-else/>
   </div>
 </template>
 
